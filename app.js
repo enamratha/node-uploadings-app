@@ -53,7 +53,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/upload", upload.single("profileImage"), async (req, res) => {
-  console.log("hi");
   const fileDetails = req.file;
   const { filename } = fileDetails;
   const { name, socialMediaHandle } = req.body;
@@ -63,7 +62,7 @@ app.post("/upload", upload.single("profileImage"), async (req, res) => {
       VALUES
       ('${name}', '${socialMediaHandle}', '${filename}');`;
   await database.run(postUploading);
-  return res.redirect("/");
+  return res.send("uploaded");
 });
 
 app.get("/uploads/:name", async (req, res) => {
@@ -82,4 +81,4 @@ app.get("/uploads", async (req, res) => {
   res.send(allUploads);
 });
 
-export default app;
+module.exports = app;
