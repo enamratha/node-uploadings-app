@@ -81,3 +81,5 @@ app.get("/uploads", async (req, res) => {
   const allUploads = await database.all(allUploadsQuery);
   res.send(allUploads);
 });
+
+export default app;
