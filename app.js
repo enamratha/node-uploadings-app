@@ -49,11 +49,7 @@ const initializeDbAndServer = async () => {
 initializeDbAndServer();
 
 app.get("/", (req, res) => {
-  return res.render("uploadingView");
-});
-
-app.get("/admin-portal", (req, res) => {
-  return res.render("dashboardView");
+  return res.render("homepage");
 });
 
 app.post("/upload", upload.single("profileImage"), async (req, res) => {
@@ -78,7 +74,6 @@ app.get("/uploads/:name", async (req, res) => {
 });
 
 app.get("/uploads", async (req, res) => {
-  console.log("test");
   const allUploadsQuery = `
         SELECT * 
         FROM uploads;
