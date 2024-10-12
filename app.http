@@ -1,0 +1,8 @@
+GET http://localhost:3000/uploads
+
+###
+
+GET http://localhost:3000/uploads/1728716603442-portrait-superhero-cartoon-style.jpg
+
+### 
+
